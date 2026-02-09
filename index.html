@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine Special 💖</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #ff4e50, #f9d423);
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hearts {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: url("https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1920&q=80");
+      opacity: 0.2;
+      z-index: 0;
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      padding: 40px 30px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      max-width: 350px;
+      width: 90%;
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 26px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      position: relative;
+      height: 80px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    #yesBtn {
+      background: #ff1e56;
+      color: #fff;
+      position: absolute;
+      left: 30px;
+      top: 0;
+    }
+
+    #noBtn {
+      background: #00e0ff;
+      color: #000;
+      position: absolute;
+      right: 30px;
+      top: 0;
+    }
+
+    .rose {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="hearts"></div>
+
+  <div class="card">
+    <div class="rose">🌹</div>
+    <h1>Do you accept my love? 💖</h1>
+
+    <div class="buttons">
+      <button id="yesBtn">Yes</button>
+      <button id="noBtn" onclick="noClick()">No</button>
+    </div>
+  </div>
+
+  <script>
+    const yesBtn = document.getElementById('yesBtn');
+
+    function moveButton() {
+      const x = Math.random() * 250 - 125;
+      const y = Math.random() * 120 - 60;
+
+      yesBtn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+
+    yesBtn.addEventListener('mouseenter', moveButton);
+    yesBtn.addEventListener('touchstart', moveButton);
+
+    function noClick() {
+      alert("Oh no 💔 But I still like you 😅");
+    }
+  </script>
+
+</body>
+</html>
